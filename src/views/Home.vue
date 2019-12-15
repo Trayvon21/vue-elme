@@ -40,7 +40,7 @@ export default {
   components: {},
   methods: {
     goto(path) {
-      if (path !== this.$router.history.current.path) {
+      if (path !== this.$route.path) {
         this.$router.push(path);
         this.active = path;
       }
