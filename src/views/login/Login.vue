@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import { SET_USER } from "../../store/mutation-types";
 export default {
   data() {
     return {
@@ -69,12 +70,12 @@ export default {
           this.phone !== "" &&
           this.username !== ""
         ) {
-          this.username.trim()
+          this.username.trim();
           let user = {
             name: this.username,
             phone: this.phone
           };
-          this.$store.commit("SET_USER", user);
+          this.$store.commit(SET_USER, user);
           localStorage.setItem("name", JSON.stringify(user));
           this.$router.push("/");
         } else {

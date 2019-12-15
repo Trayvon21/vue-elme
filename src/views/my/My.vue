@@ -66,6 +66,7 @@
 </template>
 
 <script>
+import { SET_USER } from "../../store/mutation-types";
 export default {
   data() {
     return {};
@@ -81,7 +82,7 @@ export default {
       let flag = confirm("您确定退出吗？");
       if (flag) {
         localStorage.removeItem("name");
-        this.$store.commit("SET_USER", "");
+        this.$store.commit(SET_USER, "");
       }
     }
   },

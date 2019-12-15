@@ -2,7 +2,7 @@
   <div class="main">
     <!-- 顶部 -->
     <top />
-    <!-- 导航 -->
+    <!-- 轮播 -->
     <slideshow class="slideshow" />
     <!-- 商家信息 -->
     <recommend />
@@ -10,9 +10,10 @@
 </template>
 
 <script>
-import top from "../../components/main/Top";
-import recommend from "../../components/main/recommend/recommend";
-import slideshow from "../../components/main/Slideshow";
+import top from "../../components/main/Top";//引入顶部
+import slideshow from "../../components/main/Slideshow";//引入轮播
+import recommend from "../../components/main/recommend/recommend";//引入商家信息
+
 export default {
   data() {
     return {};
@@ -22,10 +23,8 @@ export default {
     recommend,
     top
   },
-  methods: {
-  },
-  mounted() {
-  },
+  methods: {},
+  mounted() {},
   watch: {},
   computed: {}
 };
