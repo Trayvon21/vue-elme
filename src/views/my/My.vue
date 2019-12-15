@@ -158,6 +158,18 @@ export default {
     justify-content: space-between;
     .middle-desc {
       width: 30%;
+      .orange{
+        color: orange;
+        font-weight: bolder;
+      }
+      .red{
+        color: red;
+        font-weight: bolder;
+      }
+      .green{
+        color: green;
+        font-weight: bolder;
+      }
     }
   }
 }

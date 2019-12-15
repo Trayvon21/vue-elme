@@ -2,35 +2,29 @@
   <div class="main">
     <router-view />
     <div class="bottom-nav">
-      <div class="b-link">
-        <router-link to="/">
+      <div class="b-link" @click="goto('/')" :class="{'active':active==='/'}">
+        <div>
           <div>
-            <div>
-              <van-icon class="icon" name="shopping-cart" />
-            </div>
-            <div class="title">外卖</div>
+            <van-icon class="icon" name="shopping-cart" />
           </div>
-        </router-link>
+          <div class="title">外卖</div>
+        </div>
       </div>
-      <div class="b-link">
-        <router-link to="/order">
+      <div class="b-link" @click="goto('/order')" :class="{'active':active==='/order'}">
+        <div>
           <div>
-            <div>
-              <van-icon class="icon" name="balance-list" />
-            </div>
-            <div class="title">订单</div>
+            <van-icon class="icon" name="balance-list" />
           </div>
-        </router-link>
+          <div class="title">订单</div>
+        </div>
       </div>
-      <div class="b-link">
-        <router-link to="/my">
+      <div class="b-link" @click="goto('/my')" :class="{'active':active==='/my'}">
+        <div>
           <div>
-            <div>
-              <van-icon class="icon" name="friends" />
-            </div>
-            <div class="title">我的</div>
+            <van-icon class="icon" name="friends" />
           </div>
-        </router-link>
+          <div class="title">我的</div>
+        </div>
       </div>
     </div>
   </div>
@@ -39,10 +33,18 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      active: "/"
+    };
   },
   components: {},
   methods: {
+    goto(path) {
+      if (path !== this.$router.history.current.path) {
+        this.$router.push(path);
+        this.active = path;
+      }
+    },
     getJSON() {
       if (localStorage.getItem("name")) {
         let user = JSON.parse(localStorage.getItem("name"));
@@ -82,15 +84,13 @@ export default {
   margin-top: 10px;
   text-align: center;
 }
-a {
-  &.router-link-exact-active {
-    div {
-      color: #0096ff !important;
-    }
+.active {
+  div {
+    color: #0096ff !important;
+  }
 
-    i {
-      color: #0096ff !important;
-    }
+  i {
+    color: #0096ff !important;
   }
 }
 .title {
