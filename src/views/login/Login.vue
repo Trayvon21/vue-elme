@@ -151,7 +151,7 @@ export default {
   position: absolute;
   left: 50%;
   margin-left: -40%;
-  top: 350px;
+  top: 320px;
   text-indent: 2em;
 }
 .btn {
@@ -167,7 +167,7 @@ export default {
   position: absolute;
   width: 300px;
   left: 50%;
-  top: 430px;
+  top: 400px;
   display: flex;
 }
 </style>
